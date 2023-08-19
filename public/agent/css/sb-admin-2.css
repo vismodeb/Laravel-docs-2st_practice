@@ -10860,10 +10860,16 @@ a:focus {
   }
 }
 
-.bg-login-image {
+.bg-login-image img{
   background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
   background-position: center;
   background-size: cover;
+}
+
+.bg-login img{
+  width: 100%;
+  height: 500px;
+  text-align: c;
 }
 
 .bg-register-image {

@@ -34,14 +34,15 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
-
+    // logout 
     Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 });
 
 Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/dashboard', [AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
-
+    // logout
     Route::get('/agent/logout', [AgentController::class, 'AgentLogout'])->name('agent.logout');
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+Route::get('/agent/login', [AgentController::class, 'AgentLogin'])->name('agent.login');

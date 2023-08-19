@@ -18,6 +18,10 @@ class AgentController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/agent/login');
+    }
+
+    public function AgentLogin(){
+        return view('agent.agent_login');
     }
 }
