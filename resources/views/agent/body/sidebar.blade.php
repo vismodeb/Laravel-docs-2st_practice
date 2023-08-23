@@ -107,7 +107,7 @@
 
     <!-- Sidebar Message -->
     <div class="sidebar-card d-none d-lg-flex">
-        <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+        <img class="sidebar-card-illustration mb-2" src="{{ asset('agent/img/undraw_rocket.svg') }}" alt="...">
         <p class="text-center mb-2">Hello <strong>Vismo Dev</strong> here, I'm Front End Developer, Working Frontend 2+ years experience, I Love to help others!</p>
         <a class="btn btn-success btn-sm" href="#">About Me!</a>
     </div>
