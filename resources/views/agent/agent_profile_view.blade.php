@@ -51,14 +51,14 @@
 				<div class="card">
 					<div class="card-body">
 
-						<form method="POST" active="{{ route('agent.profile.store') }}" enctype="multipart/form-data">
+						<form method="POST" action="{{ route('agent.profile.store') }}" class="forms-sample" enctype="multipart/form-data">
 							@csrf
 
 							<h2 class="text-center">Profile Upadate</h2>
 
 							<div class="form-group mt-5">
 								<label for="name">UserName</label>
-								<input type="text" name="username" class="form-control" id="name" value="{{ $profileData->username }}">
+								<input type="text" name="username" class="form-control" id="username" value="{{ $profileData->username }}">
 							</div>
 
 							<div class="form-group">
