@@ -46,6 +46,8 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent.profile', [AgentController::class, 'AgentProfile'])->name('agent.profile');
     // profile update
     Route::post('/agent/profile/store', [AgentController::class, 'AgentProfileStore'])->name('agent.profile.store');
+    // password change
+    Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');

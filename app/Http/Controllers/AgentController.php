@@ -58,4 +58,10 @@ class AgentController extends Controller
 
         return redirect()->back()->with($notification);
     }
+    
+    public function AgentChangePassword(){
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+        return view('agent.agent_change_password',compact('profileData'));
+    }
 }
