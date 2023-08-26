@@ -1,6 +1,8 @@
 @extends('agent.agent_dashboard')
 @section('agent')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 <!--Main container start -->
 <main class="ttr-wrapper">
 	<div class="container-fluid">
@@ -48,7 +50,7 @@
 				<div class="card">
 					<div class="card-body">
 
-						<form method="POST" action="{{ route('agent.profile.store') }}" class="forms-sample" enctype="multipart/form-data">
+						<form method="POST" action="{{ route('agent.update.password') }}" class="forms-sample" enctype="multipart/form-data">
 							@csrf
 
 							<h2 class="text-center">Agent Change Password</h2>
@@ -70,8 +72,8 @@
 							</div>
 
 							<div class="form-group mt-5">
-								<label for="confirm_new_password">Confirm New Password</label>
-								<input type="password" name="confirm_new_password" class="form-control" id="confirm_new_password" autocomplete="off">
+								<label for="new_password_confirmation">Confirm New Password</label>
+								<input type="password" name="new_password_confirmation" class="form-control" id="new_password_confirmation" autocomplete="off">
 							</div>
 
 							<button type="submit" class="btn btn-primary mt-5">Save Change</button>

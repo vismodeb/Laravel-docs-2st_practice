@@ -48,6 +48,8 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::post('/agent/profile/store', [AgentController::class, 'AgentProfileStore'])->name('agent.profile.store');
     // password change
     Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');
+    // update password
+    Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AgentController extends Controller
 {
@@ -57,11 +58,42 @@ class AgentController extends Controller
         );
 
         return redirect()->back()->with($notification);
-    }
+    } // profile update
     
     public function AgentChangePassword(){
         $id = Auth::user()->id;
         $profileData = User::find($id);
         return view('agent.agent_change_password',compact('profileData'));
-    }
+    } // password change
+
+    public function AgentUpdatePassword(Request $request){
+
+        // Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+        // Match The old Password
+        if(!Hash::check($request->old_password, auth::user()->password)){
+
+            $notification = array(
+                'message' => 'Old Password Dose Not Mathch',
+                'alert-type' => 'error'
+            );
+            return back()->with($notification);
+        }
+
+        // Update The New Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        $notification = array(
+            'message' => 'Password Change Successfully',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification);
+
+    } // update password
 }

@@ -18,8 +18,8 @@
 		<!-- <hr> -->
 
 		<div class="row">
+
 			<div class="col-lg-4">
-				
 				<div class="card">
 					<div class="card-body">
 						<div class="row col-sm mt-5">
@@ -44,7 +44,6 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 
 			<div class="col-lg-8">
@@ -103,6 +102,7 @@
 	</div>
 </main>
 
+<!-- photo uplode -->
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#image').change(function(e){
@@ -114,5 +114,6 @@
 		});
 	});
 </script>
+<!-- photo uplode -->
 
 @endsection
